@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Calculator</h2>
+            <div class="input">
+                <input type="number" id="ip1" required placeholder="Eneter First Number">
+                <br>
+                <input type="number" id="ip2" required placeholder="Eneter Second Number">
+            </div>
+            <div class="btn">
+                <button type="button" class="btn1" id="add">Addition +</button>
+                <button type="button" class="btn1" id="sub">Substract -</button>
+
+                <button type="button" class="btn1" id="mul">Multiply *</button>
+                <button type="button" class="btn1" id="Div">Divide /</button>
+            </div>
+
+            <input type="number" id="result" placeholder="Output is here" readonly class="result">
+        </div>
+
+        <script>
+            var n1 = document.getElementById("ip1");
+            var n2 = document.getElementById("ip2");
+            var res = document.getElementById("result");
+            document.getElementById("add").addEventListener("click", function () {
+                res.value = parseInt(n1.value) + parseInt(n2.value);
+            });
+
+            document.getElementById("sub").addEventListener("click", function () {
+                res.value = parseInt(n1.value) - parseInt(n2.value);
+            });
+
+            document.getElementById("mul").addEventListener("click", function () {
+                res.value = parseInt(n1.value) * parseInt(n2.value);
+            });
+
+            document.getElementById("Div").addEventListener("click", function () {
+                res.value = parseInt(n1.value) / parseInt(n2.value);
+            });
+
+        </script>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                border: 2px solid black;
+                display: flex;
+                flex-direction: column;
+                padding: 50px;
+                margin-left: 300px;
+                margin-right: 300px;
+            }
+
+            .btn {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                margin: 10px;
+
+            }
+
+            .btn>.btn1 {
+                border: 2px solid black;
+                height: 22px;
+                width: 100px;
+                border-radius: 5px;
+                color: red;
+                background-color: rgb(10, 181, 254);
+            }
+
+            .input>input {
+                border: 2px solid black;
+                width: 300px;
+                text-align: center;
+                height: 20px;
+                margin-top: 10px;
+            }
+
+            .result {
+                border: 2px solid black;
+                border-radius: 10px;
+                text-align: center;
+                height: 20px;
+                font-weight: bold;
+                background-color: aqua;
+                color: deeppink
+            }
+        </style>
+    </body>
+
+</html>
